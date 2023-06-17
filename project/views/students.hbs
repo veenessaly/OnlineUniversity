@@ -43,7 +43,7 @@
                             <td>{{this.Username}}</td>
                             <td>{{this.Email}}</td>
                             <td>{{this.Major}}</td>
-                            <td><button onclick="deleteStudent({{this.studentID}})">Delete Student</button></td>
+                            <td><button onclick="deleteStudent({{this.studentID}})">Delete</button></td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -53,7 +53,7 @@
             <article>
                 {{!-- Form to add a record to the table  --}}
                 <h2>Add Student</h2>
-                <p>To add a new student, please enter their information below and click 'Submit'!</p>
+                <p>To add a new student, please enter their information below and click 'Add Student'</p>
                 <form id="add-student-form-ajax">
                     <label for="input-firstName">First Name: </label>
                     <input type="text" name="input-firstName" id="input-firstName" placeholder="First Name" required>

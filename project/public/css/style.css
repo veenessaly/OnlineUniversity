@@ -21,24 +21,23 @@
   /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
   body {
     text-align: center;
-    background-color: rgba(25, 157, 245, 0.692);
+    background-color: snow;
   }
 
   
   /*  ----- Page layout blocks -----  */
   header {
     text-align: center;
-    font-family: 'Faster One', cursive;
-    box-shadow: #161313 7px 7px 5px;
+    font-family: 'Georgia', cursive;
     font-size: 35px;
-    background-color: rgba(243, 218, 105, 0.822);
+    background-color: midnightblue;
     margin: 2%;
+    color: rgba(186,7,15,100);
   
   }
   main {
-    background-color: rgba(176, 216, 243, 0.527);
-    box-shadow: #161313 10px 10px 3px;
-    border: 2px solid rgb(243, 218, 105);
+    background-color: snow;
+    border: 1px solid slategray;
     align-items: center;
     margin: 2%;
     padding: 1%;
@@ -58,25 +57,32 @@
   
   /* ----- Anchors ----- Text links */
   a {}
-  a:link {}
-  a:hover {}
-  a:active {
-    border: 7px solid rgb(0, 0, 0);
+  a:link {
+    color: midnightblue;
+    text-decoration: none;
   }
-  a:visited {}
+  a:hover {
+    color: rgba(186,7,15,100);
+    text-decoration: none;
+  }
+  a:active {
+    font-weight: bold;
+  }
+  a:visited {
+    font-weight: bold;
+  }
   
   /*  ----- Navigation ----- Override text links for navigation only.  */
   nav {
     text-align: center;
     text-decoration: none;
-    font-family: 'Underdog', cursive;
+    font-family: 'Georgia';
     
   }
 
   nav a {
-    background-color: rgb(243, 218, 105);
-    border: 3px solid black;
-    box-shadow: #0e41e7 7px 7px 5px;
+    background-color: snow;
+    border: none;
     font-weight: bold;
     font-size: 15px;
     padding: 1%;
@@ -98,7 +104,7 @@
   h2 {
     text-align: center;
     font-size: xx-large;
-    font-family: 'Underdog', cursive;
+    font-family: 'Georgia', cursive;
   }
   h3 {}
   h4 {}
@@ -132,7 +138,7 @@
   
   /*  ----- Table ----- */
   table {
-    border: 3px solid black; 
+    border: 2px solid lightslategray; 
     width: 100% auto;
     text-align: center;
     margin: 2% auto;
@@ -146,17 +152,18 @@
   tfoot {}
   tr {}
     tr:nth-child(odd) {
-      background-color: rgba(170, 169, 169, 0.514);
+      background-color: rgb(214, 212, 212);
     }
   th {
-    background-color:rgb(243, 218, 105);
-    border: 2px solid black;
+    background-color:snow;
+    color: midnightblue;
+    border: 2px solid lightslategray;
     font-weight: bold;
     font-size: 25px;
     margin: 2%;
   }
   td {
-    border: 2px solid black;
+    border: 2px solid lightslategray;
     margin: 20px;
     padding: 5px;
   }
@@ -174,7 +181,7 @@
   fieldset {}
     legend {}
   label {}
-    button {}
+    button{}
     input {}
     output {}
     meter {}

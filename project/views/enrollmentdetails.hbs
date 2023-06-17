@@ -41,7 +41,7 @@
                         <td>{{this.EnrollmentDate}}</td>
                         <td>{{this.Student}}</td>
                         <td>{{this.Class}}</td>
-                        <td><button onclick="deleteEnrollmentDetails({{this.enrollmentID}})">Delete Enrollment Details</button></td>
+                        <td><button onclick="deleteEnrollmentDetails({{this.enrollmentID}})">Delete</button></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -52,7 +52,7 @@
         <article>
 {{!-- Form to add a record to the table  --}}
             <h2>Add Enrollment Detail</h2>
-            <p>To add a new enrollment Detail, please enter their information below and click 'Submit'!</p>
+            <p>To add a new enrollment Detail, please enter their information below and click 'Add Enrollment Detail'!</p>
             <form id="add-enrollmentdetails-form-ajax">
                 <label for="input-enrollmentDate">Enrollment Date: </label>
                 <input type="date" name="input-enrollmentdetailsDate" id="input-enrollmentdetailsDate" required>

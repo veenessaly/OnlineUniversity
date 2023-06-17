@@ -39,7 +39,7 @@
                             <td>{{this.Username}}</td>
                             <td>{{this.Email}}</td>
                             <td>{{this.Department}}</td>
-                            <td><button onclick="deleteProfessor({{this.professorID}})">Delete Professor</button></td>
+                            <td><button onclick="deleteProfessor({{this.professorID}})">Delete</button></td>
                         </tr>
                         {{/each}}
                     </tbody>
@@ -49,7 +49,7 @@
             <article>
                                     {{!-- Form to add a record to the table  --}}
                 <h2>Add Professor</h2>
-                <p>To add a new Professor, please enter their information below and click 'Submit'!</p>
+                <p>To add a new Professor, please enter their information below and click 'Add Professor'</p>
                 <form id="add-professor-form-ajax">
                     <label for="input-firstName">First Name: </label>
                     <input type="text" name="input-firstName" id="input-firstName" placeholder="First Name" required>

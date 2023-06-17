@@ -22,7 +22,7 @@ SET AUTOCOMMIT = 0;
 -- ------------------
 
 -- Terms table: Records the terms that classes are offered --
-CREATE OR REPLACE TABLE Terms (
+CREATE TABLE Terms (
     termID int AUTO_INCREMENT NOT NULL,
     term varchar(50) NOT NULL,
     yr year NOT NULL,
@@ -30,14 +30,14 @@ CREATE OR REPLACE TABLE Terms (
 );
 
 -- Department Table: Records the different departments within the university and the names of the departments--
-CREATE OR REPLACE TABLE Departments (
+CREATE TABLE Departments (
     deptID int(10) AUTO_INCREMENT NOT NULL,
     deptName varchar(145) NOT NULL,
     PRIMARY KEY (deptID)
 );
 
 -- Majors Table: Records the current majors offered at the university--
-CREATE OR REPLACE TABLE Majors (
+CREATE TABLE Majors (
     majorID int AUTO_INCREMENT NOT NULL,
     majorName varchar(255) NOT NULL,
     deptID int,
@@ -47,7 +47,7 @@ CREATE OR REPLACE TABLE Majors (
 
 
 -- Student table: Records the relevant details of a student that attends "Online Fake University"--
-CREATE OR REPLACE TABLE Students (
+CREATE TABLE Students (
     studentID bigint AUTO_INCREMENT NOT NULL,
     firstName varchar(255) NOT NULL,
     lastName varchar(255) NOT NULL,
@@ -60,7 +60,7 @@ CREATE OR REPLACE TABLE Students (
 );
 
 -- Professors table: Records the relevant details of a professor that teaches at the university--
-CREATE OR REPLACE TABLE Professors (
+CREATE TABLE Professors (
     professorID bigint AUTO_INCREMENT NOT NULL,
     firstName varchar(255) NOT NULL,
     lastName varchar(255) NOT NULL,
@@ -73,7 +73,7 @@ CREATE OR REPLACE TABLE Professors (
 );
 
 -- Classes table: Records the classes offered at the university-- 
-CREATE OR REPLACE TABLE Classes (
+CREATE TABLE Classes (
     classID bigint AUTO_INCREMENT NOT NULL,
     className varchar(145) NOT NULL,
     classCredits int(10) NOT NULL,
@@ -95,7 +95,7 @@ CREATE OR REPLACE TABLE Classes (
 -- --------------------------------
 
 -- EnrollmentDetails table: Intersection table for the M:M relationship between Students and Classes --
-CREATE OR REPLACE TABLE EnrollmentDetails (
+CREATE TABLE EnrollmentDetails (
     enrollmentID bigint AUTO_INCREMENT NOT NULL,
     enrollmentDate date NOT NULL,
     studentID bigint,
@@ -108,7 +108,7 @@ CREATE OR REPLACE TABLE EnrollmentDetails (
 );
 
 -- TermClassDetails table: Intersection table for the M:M relationshp between Terms and Classes; ON DELETE CASCADE--
-CREATE OR REPLACE TABLE TermClassDetails (
+CREATE TABLE TermClassDetails (
     termclassdetailsID int AUTO_INCREMENT NOT NULL,
     termID int NOT NULL, 
     classID bigint NOT NULL,
