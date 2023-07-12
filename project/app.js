@@ -162,7 +162,7 @@ app.get('/classes', function(req, res)
 
 app.get('/enrollmentdetails', function(req, res)
     {  
-        let query1 = "SELECT enrollmentID, enrollmentDate AS EnrollmentDate, CONCAT(Students.firstName,' ', Students.lastName) AS Student, Classes.className as Class FROM EnrollmentDetails INNER JOIN Students ON EnrollmentDetails.studentID = Students.studentID Inner JOIN Classes ON EnrollmentDetails.classID = Classes.classID;";
+        let query1 = "SELECT enrollmentID, CONCAT(Students.firstName,' ', Students.lastName) AS Student, Classes.className as Class FROM EnrollmentDetails INNER JOIN Students ON EnrollmentDetails.studentID = Students.studentID Inner JOIN Classes ON EnrollmentDetails.classID = Classes.classID ORDER BY enrollmentID;";
         
         let query2 = "SELECT * FROM Students;";
 
@@ -641,7 +641,7 @@ app.post("/add-enrollmentdetails-ajax", function(req, res)
     }
     
 // Create the enrollmentDetails query and run it on the database
-    query1 = `INSERT INTO EnrollmentDetails (enrollmentDate, studentID, classID) VALUES ('${data.enrollmentDate}', '${data.studentID}', '${data.classID}')`;
+    query1 = `INSERT INTO EnrollmentDetails (studentID, classID) VALUES ('${data.studentID}', '${data.classID}')`;
     db.pool.query(query1, function(error, rows, fields){
 
         // Check to see if there was an error
@@ -717,11 +717,10 @@ app.delete("/delete-enrollmentdetail-ajax", function(req,res,next){
     let data = req.body;
   
     let enrollmentID = parseInt(data.enrollmentID);
-    let enrollmentDate = parseInt(data.enrollmentDate);
     let studentID = parseInt(data.studentID);
     let classID = parseInt(data.classID);
   
-    let queryUpdateDate = `UPDATE EnrollmentDetails SET enrollmentDate = '${data.enrollmentDate}', studentID = '${data.studentID}', classID = '${data.classID}' WHERE EnrollmentDetails.enrollmentID = '${data.enrollmentID}`;
+    let queryUpdateDate = `UPDATE EnrollmentDetails SET studentID = '${data.studentID}', classID = '${data.classID}' WHERE EnrollmentDetails.enrollmentID = '${data.enrollmentID}`;
     let selectStudent = `SELECT * FROM Students WHERE studentID = ?`
   
           // Run the 1st query
