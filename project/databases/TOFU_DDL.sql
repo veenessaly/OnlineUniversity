@@ -97,7 +97,6 @@ CREATE TABLE Classes (
 -- EnrollmentDetails table: Intersection table for the M:M relationship between Students and Classes --
 CREATE TABLE EnrollmentDetails (
     enrollmentID bigint AUTO_INCREMENT NOT NULL,
-    enrollmentDate date NOT NULL,
     studentID bigint,
     classID bigint,
     PRIMARY KEY(enrollmentID),
@@ -184,14 +183,14 @@ VALUES ('Organic Chemistry I', 4, (SELECT professorID FROM Professors WHERE user
     ('History of Jazz', 2, (SELECT professorID FROM Professors WHERE userName = 'Davisbe'), (SELECT deptID FROM Departments WHERE deptName = 'Music'));
 
 -- Insert Enrollments data--
-INSERT INTO EnrollmentDetails (enrollmentDate, studentID, classID)
-VALUES ('2024-05-06', (Select studentID from Students WHERE userName = 'rubioluc'), (Select classID from Classes where className = 'Organic Chemistry I')),
-    ('2024-05-07', (Select studentID from Students WHERE userName = 'thomask'), (Select classID from Classes where className = 'Organic Chemistry I')),
-    ('2024-05-08', (Select studentID from Students WHERE userName = 'smitsch'), (Select classID from Classes where className = 'Intro to Computer Science')),
-    ('2024-05-09', (Select studentID from Students WHERE userName = 'cooperj'), (Select classID from Classes where className = 'Intro to Computer Science')),
-    ('2024-05-10', (Select studentID from Students WHERE userName = 'meyerma'), (Select classID from Classes where className = 'Contemporary Art History')),
-    ('2024-05-11', (Select studentID from Students WHERE userName = 'sultonl'), (Select classID from Classes where className = 'Quantum Mechanics')),
-    ('2024-05-12', (Select studentID from Students WHERE userName = 'sultonl'), (Select classID from Classes where className = 'Organic Chemistry I'));
+INSERT INTO EnrollmentDetails (studentID, classID)
+VALUES ((Select studentID from Students WHERE userName = 'rubioluc'), (Select classID from Classes where className = 'Organic Chemistry I')),
+    ((Select studentID from Students WHERE userName = 'thomask'), (Select classID from Classes where className = 'Organic Chemistry I')),
+    ((Select studentID from Students WHERE userName = 'smitsch'), (Select classID from Classes where className = 'Intro to Computer Science')),
+    ((Select studentID from Students WHERE userName = 'cooperj'), (Select classID from Classes where className = 'Intro to Computer Science')),
+    ((Select studentID from Students WHERE userName = 'meyerma'), (Select classID from Classes where className = 'Contemporary Art History')),
+    ((Select studentID from Students WHERE userName = 'sultonl'), (Select classID from Classes where className = 'Quantum Mechanics')),
+    ((Select studentID from Students WHERE userName = 'sultonl'), (Select classID from Classes where className = 'Organic Chemistry I'));
 
 -- Insert TermClassDetails data--
 INSERT INTO TermClassDetails (termID, classID)

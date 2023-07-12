@@ -29,18 +29,15 @@ addenrollmentdetailsForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Get form fields we need to get data from
-    let inputEnrollmentdetailsDate = document.getElementById("input-enrollmentdetailsDate");
     let inputStudentID = document.getElementById("input-studentName");
     let inputClassID = document.getElementById("input-className");
  
     // Get the values from the form fields
-    let enrollmentdetailsDateValue = inputEnrollmentdetailsDate.value;
     let studentIDValue = inputStudentID.value;
     let classIDValue = inputClassID.value;
 
     // Put our data we want to send in a javascript object
     let data = {
-        enrollmentdetailsDate: enrollmentdetailsDateValue,
         studentID: studentIDValue,
         classID: classIDValue,
     }
@@ -59,7 +56,6 @@ addenrollmentdetailsForm.addEventListener("submit", function (e) {
             location.reload();
 
             // Clear the input fields for another transaction
-            inputEnrollmentdetailsDate.value = '';
             inputStudentID.value = '';
             inputClassID.value = '';
         }
@@ -91,7 +87,6 @@ addRowToTable = (data) => {
     // Create a row and 4 cells
     let row = document.createElement("TR");
     let enrollmentdetailsIDCell = document.createElement("TD");
-    let enrollmentDateCell = document.createElement("TD");
     let studentIDCell = document.createElement("TD");
     let classIDCell = document.createElement("TD");
 
@@ -99,7 +94,6 @@ addRowToTable = (data) => {
 
     // Fill the cells with correct data
     enrollmentdetailsIDCell.innerText = newRow.enrollmentdetailsID;
-    enrollmentDateCell.innerText = newRow.EnrollmentDate;
     studentIDCell.innerText = newRow.StudentID;
     classIDCell.innerText = newRow.ClassID;
 
@@ -112,7 +106,6 @@ addRowToTable = (data) => {
 
     // Add the cells to the row 
     row.appendChild(enrollmentdetailsIDCell);
-    row.appendChild(enrollmentDateCell);
     row.appendChild(studentIDCell);
     row.appendChild(classIDCell);
 
@@ -121,27 +114,5 @@ addRowToTable = (data) => {
     
     // Add the row to the table
     currentTable.appendChild(row);
-
-   
-    // // Find drop down menu, create a new option, fill data in the option (full name, id),
-    // // then append option to drop down menu so newly created rows via ajax will be found in it without needing a refresh
-    // let selectMenu1 = document.getElementById("select-enrollmentdetailsDate");
-    // let option1 = document.createElement("option");
-    // option1.text = newRow.enrollmentdetailsDate;
-    // option1.value = newRow.enrollmentdetailsDate;
-    // selectMenu1.add(option);
-    
-    // let selectMenu2 = document.getElementById("select-studentID");
-    // let option2 = document.createElement("option");
-    // option2.text = newRow.studentID; //adjust this to studentName
-    // option2.value = newRow.studentID;
-    // selectMenu2.add(option);
-
-    // let selectMenu = document.getElementById("select-classID");
-    // let option = document.createElement("option");
-    // option.text = newRow.className; //adjust this to classname
-    // option.value = newRow.classID;
-    // selectMenu.add(option);
-    // // End of new step 8 code.
 
 }

@@ -14,20 +14,17 @@ updateEnrollmentDetailsForm.addEventListener("submit", function (e) {
 
     // Get form fields we need to get data from
     let inputEnrollmentID = document.getElementById("input-enrollmentID-update");
-    let inputEnrollmentDate = document.getElementById("input-enrollmentdetailsDate-update");
     let inputStudentID = document.getElementById("input-studentID-update");
     let inputClassID = document.getElementById("input-classID-update");
 
     // Get the values from the form fields
     let EnrollmentIDValue = inputEnrollmentID.value;
-    let EnrollmentDateValue = inputEnrollmentDate;
     let StudentIDValue = inputStudentID.value;
     let ClassIDValue = inputClassID.value;
 
     // Put our data we want to send in a javascript object
     let data = {
         EnrollmentID: EnrollmentIDValue,
-        EnrollmentDate: EnrollmentDateValue,
         studentID: StudentIDValue,
         ClassID: ClassIDValue,
     }

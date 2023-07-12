@@ -38,7 +38,6 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.enrollmentID}}</td>
-                        <td>{{this.EnrollmentDate}}</td>
                         <td>{{this.Student}}</td>
                         <td>{{this.Class}}</td>
                         <td><button onclick="deleteEnrollmentDetails({{this.enrollmentID}})">Delete</button></td>
@@ -54,8 +53,6 @@
             <h2>Add Enrollment Detail</h2>
             <p>To add a new enrollment Detail, please enter their information below and click 'Add Enrollment Detail'!</p>
             <form id="add-enrollmentdetails-form-ajax">
-                <label for="input-enrollmentDate">Enrollment Date: </label>
-                <input type="date" name="input-enrollmentdetailsDate" id="input-enrollmentdetailsDate" required>
                 
                 {{!-- selects a Student from a drop down menu --}}
                 <label for="input-studentID">Student Name:</label>
@@ -78,47 +75,5 @@
                 <input type="submit" value='Add Enrollment Detail'>
             </form>
             <script src="./js/add_enrollmentdetails.js"></script>
-        </article>
-        {{!-- <article>
-            <h2>Update Enrollment Detail</h2>
-            <p>To update an enrollment Detail, please enter information and click 'Submit'!</p>
-            <form id="update-enrollmentdetails-form-ajax">
-
-                <label for="input-enrollmentID">EnrollmentID: </label>
-                <select name="input-enrollmentID" id="input-enrollmentID-update">
-                    <option>Select an ID</option>
-                    {{#each data}}
-                    <option value="{{this.enrollmentID}}">{{this.enrollmentID}}</option>
-                    {{/each}}
-                </select>
-
-                <label for="input-enrollmentDate">Enrollment Date: </label>
-                <Input Type="Date" name="input-enrollmentDate" id="input-enrollmentdetailsDate-update">
-
-                <label for="input-studentID">Student Name: </label>
-                <select name="input-studentID" id="input-studentID-update">
-                    <option>Select a student</option>
-                    {{#each students}}
-                    <option value="{{this.studentsID}}">{{this.firstName}} {{this.lastName}}</option>
-                    {{/each}}
-                </select>
-
-                <label for="input-classID">Class Name: </label>
-                <select name="input-classID" id="input-classID-update">
-                    <option>Select a Class</option>
-                    {{#each classes}}
-                    <option value="{{this.classID}}">{{this.className}}</option>
-                    {{/each}}
-                </select>
-
-                <label for="input-classID">Class Name: </label>
-                <select name="input-classID" id="select-classID">
-                    <option>Select a Class</option>
-                    {{#each classes}}
-                    <option value="{{this.classID}}">{{this.className}}</option>
-                </select>
-                <input type="submit">
-            </form>
-        </article> --}}
     </section>
 </main>
